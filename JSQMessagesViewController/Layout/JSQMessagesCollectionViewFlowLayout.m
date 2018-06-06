@@ -33,8 +33,8 @@
 #import "JSQMessagesBubblesSizeCalculator.h"
 
 #import "UIImage+JSQMessages.h"
-
-
+//fengbo 消息发送者名字
+//kJSQMessagesCollectionViewCellLabelHeightDefault = 20.0f;
 const CGFloat kJSQMessagesCollectionViewCellLabelHeightDefault = 20.0f;
 const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
 

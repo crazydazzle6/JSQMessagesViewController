@@ -57,15 +57,18 @@
     /**
      *  You can set custom avatar sizes
      */
-    if (![NSUserDefaults incomingAvatarSetting]) {
-        self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
-    }
+    self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeMake(40, 40);
+    self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeMake(40, 40);
+
+//    if (![NSUserDefaults incomingAvatarSetting]) {
+//        self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
+//    }
+//
+//    if (![NSUserDefaults outgoingAvatarSetting]) {
+//        self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
+//    }
     
-    if (![NSUserDefaults outgoingAvatarSetting]) {
-        self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
-    }
-    
-    self.showLoadEarlierMessagesHeader = YES;
+    self.showLoadEarlierMessagesHeader = NO;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage jsq_defaultTypingIndicatorImage]
                                                                               style:UIBarButtonItemStylePlain
@@ -117,7 +120,7 @@
      *  You must set this from `viewDidAppear:`
      *  Note: this feature is mostly stable, but still experimental
      */
-    self.collectionView.collectionViewLayout.springinessEnabled = [NSUserDefaults springinessSetting];
+//    self.collectionView.collectionViewLayout.springinessEnabled = [NSUserDefaults springinessSetting];
 }
 
 

@@ -49,17 +49,17 @@
         _dateFormatter = [[NSDateFormatter alloc] init];
         [_dateFormatter setLocale:[NSLocale currentLocale]];
         [_dateFormatter setDoesRelativeDateFormatting:YES];
-        
-        UIColor *color = [UIColor lightGrayColor];
+#pragma mark fengbo日期颜色调整
+        UIColor *color = [UIColor whiteColor];
         
         NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
         paragraphStyle.alignment = NSTextAlignmentCenter;
         
-        _dateTextAttributes = @{ NSFontAttributeName : [UIFont preferredFontForTextStyle:UIFontTextStyleBody],
+        _dateTextAttributes = @{ NSFontAttributeName : [UIFont systemFontOfSize:13],
                                  NSForegroundColorAttributeName : color,
                                  NSParagraphStyleAttributeName : paragraphStyle };
         
-        _timeTextAttributes = @{ NSFontAttributeName : [UIFont preferredFontForTextStyle:UIFontTextStyleBody],
+        _timeTextAttributes = @{ NSFontAttributeName : [UIFont systemFontOfSize:13],
                                  NSForegroundColorAttributeName : color,
                                  NSParagraphStyleAttributeName : paragraphStyle };
     }

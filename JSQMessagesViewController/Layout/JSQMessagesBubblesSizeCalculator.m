@@ -91,6 +91,9 @@
     [self.cache removeAllObjects];
 }
 
+
+#pragma mark fengbo计算文本SIZE并且缓存
+
 - (CGSize)messageBubbleSizeForMessageData:(id<JSQMessageData>)messageData
                               atIndexPath:(NSIndexPath *)indexPath
                                withLayout:(JSQMessagesCollectionViewFlowLayout *)layout
@@ -114,7 +117,8 @@
         CGFloat horizontalFrameInsets = layout.messageBubbleTextViewFrameInsets.left + layout.messageBubbleTextViewFrameInsets.right;
 
         CGFloat horizontalInsetsTotal = horizontalContainerInsets + horizontalFrameInsets + spacingBetweenAvatarAndBubble;
-        CGFloat maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
+        CGFloat maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal - 30;
+//        CGFloat maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
 
         CGRect stringRect = [[messageData text] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
                                                              options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
@@ -133,7 +137,9 @@
         //  same as above, an extra 2 points of magix
         CGFloat finalWidth = MAX(stringSize.width + horizontalInsetsTotal, self.minimumBubbleWidth) + self.additionalInset;
 
-        finalSize = CGSizeMake(finalWidth, stringSize.height + verticalInsets);
+//        finalSize = CGSizeMake(finalWidth, stringSize.height + verticalInsets);
+        finalSize = CGSizeMake(finalWidth, stringSize.height + verticalInsets + 15);
+
     }
 
     [self.cache setObject:[NSValue valueWithCGSize:finalSize] forKey:@([messageData messageHash])];
