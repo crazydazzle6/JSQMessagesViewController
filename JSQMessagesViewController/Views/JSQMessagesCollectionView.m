@@ -114,26 +114,26 @@ forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
 
 #pragma mark - Load earlier messages header
 
-- (JSQMessagesLoadEarlierHeaderView *)dequeueLoadEarlierMessagesViewHeaderForIndexPath:(NSIndexPath *)indexPath
-{
-    JSQMessagesLoadEarlierHeaderView *headerView = [super dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader
-                                                                             withReuseIdentifier:[JSQMessagesLoadEarlierHeaderView headerReuseIdentifier]
-                                                                                    forIndexPath:indexPath];
-
-    headerView.loadButton.tintColor = self.loadEarlierMessagesHeaderTextColor;
-    headerView.delegate = self;
-
-    return headerView;
-}
+//- (JSQMessagesLoadEarlierHeaderView *)dequeueLoadEarlierMessagesViewHeaderForIndexPath:(NSIndexPath *)indexPath
+//{
+//    JSQMessagesLoadEarlierHeaderView *headerView = [super dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+//                                                                             withReuseIdentifier:[JSQMessagesLoadEarlierHeaderView headerReuseIdentifier]
+//                                                                                    forIndexPath:indexPath];
+//
+//    headerView.loadButton.tintColor = self.loadEarlierMessagesHeaderTextColor;
+//    headerView.delegate = self;
+//
+//    return headerView;
+//}
 
 #pragma mark - Load earlier messages header delegate
 
-- (void)headerView:(JSQMessagesLoadEarlierHeaderView *)headerView didPressLoadButton:(UIButton *)sender
-{
-    if ([self.delegate respondsToSelector:@selector(collectionView:header:didTapLoadEarlierMessagesButton:)]) {
-        [self.delegate collectionView:self header:headerView didTapLoadEarlierMessagesButton:sender];
-    }
-}
+//- (void)headerView:(JSQMessagesLoadEarlierHeaderView *)headerView didPressLoadButton:(UIButton *)sender
+//{
+//    if ([self.delegate respondsToSelector:@selector(collectionView:header:didTapLoadEarlierMessagesButton:)]) {
+//        [self.delegate collectionView:self header:headerView didTapLoadEarlierMessagesButton:sender];
+//    }
+//}
 
 #pragma mark - Messages collection view cell delegate
 

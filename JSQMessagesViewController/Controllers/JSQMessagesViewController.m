@@ -155,7 +155,9 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     self.collectionView.delegate = self;
 
     self.inputToolbar.delegate = self;
-    self.inputToolbar.contentView.textView.placeHolder = [NSBundle jsq_localizedStringForKey:@"new_message"];
+    self.inputToolbar.contentView.textView.placeHolder =  @"Type amessage...";
+    self.inputToolbar.contentView.textView.layer.cornerRadius = 17.0f;
+    
     self.inputToolbar.contentView.textView.accessibilityLabel = [NSBundle jsq_localizedStringForKey:@"new_message"];
     self.inputToolbar.contentView.textView.delegate = self;
     self.inputToolbar.contentView.textView.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
